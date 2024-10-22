@@ -47,7 +47,7 @@ cropButton.addEventListener('click', function () {
    var imgInput = new Image();
             imgInput.src = croppedImage.src; // Imagem do input
             imgInput.onload = function() {
-                context.drawImage(imgInput, 0, 0, canvas.width, canvas.height);
+                context.drawImage(imgInput, 0, 0); //canvas.width, canvas.height
 
         
         var img1 = new Image();
