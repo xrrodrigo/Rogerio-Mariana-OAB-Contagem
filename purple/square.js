@@ -54,13 +54,7 @@ cropButton.addEventListener('click', function () {
             var imgInput = new Image();
             imgInput.src = croppedImage.src; // Imagem do input
             imgInput.onload = function() {
-                context.save();
-                context.beginPath();
-                context.arc(canvas.width / 2, canvas.height / 2, canvas.height / 2, 0, 2 * Math.PI);
-                context.closePath();
-                context.clip();
                 context.drawImage(imgInput, 0, 0, canvas.width, canvas.height);
-                context.restore();
 
                 var img3 = new Image();
                 img3.src = 'overlay.png'; // Caminho da terceira imagem (img3)
