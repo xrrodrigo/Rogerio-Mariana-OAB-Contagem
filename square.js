@@ -62,4 +62,11 @@ cropButton.addEventListener('click', function () {
 
                 // Finalmente, desenhamos a imagem de overlay
                 var imgOverlay = new Image();
-                imgOverlay.src =
+                imgOverlay.src = 'overlay.png'; // Caminho da terceira imagem (overlay)
+                imgOverlay.onload = function() {
+                    context.drawImage(imgOverlay, 0, 0); // Ajustar a posição conforme necessário
+                };
+            };
+        };
+    });
+});
