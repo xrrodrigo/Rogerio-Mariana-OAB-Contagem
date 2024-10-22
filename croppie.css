@@ -1,0 +1,15 @@
+.container
+{
+display: none;
+}
+.canva
+{
+border-radius: 50%;
+}
+.cr-viewport, .cr-vp-square
+{
+border-radius: 50%;
+}
+input[type="range"]::-webkit-slider-thumb {
+background-color: #1D3E7B;
+}
