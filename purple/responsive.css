@@ -1,0 +1,115 @@
+@media (width < 900px){
+    *
+    {
+    margin: 0;
+    border: 0;
+    }
+    aside{
+        display: none;
+    }
+ /*   canvas
+    {
+        max-width: 70%;
+    }*/
+    main
+    {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    main img
+    {
+        margin: 1.5rem 0 1rem 0;
+    }
+    .preview
+    {
+    margin: 0;
+    }
+    label
+    {   
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    width: 130px;
+    height: 75px;
+    margin-right: 5px;
+    border: solid 1px #949494;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: space-evenly;
+    }
+    .desc
+    {
+    color: #949494;
+    font-size: 1.063rem;
+    text-align: center;
+    }
+    .downloadBtn
+    {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 130px;
+    height: 75px;
+    margin-left: 5px;
+    border: solid 1px #949494;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    }
+    .controls
+    {
+    display: flex;
+    align-items: flex-end;
+    }
+    .cam
+    {
+        width: 40px;
+    }
+    .logo
+    {
+    width: 140px;
+    margin-top: 10px;
+    }
+    .title
+    {
+    font-size: 16px;
+    }
+    .container
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .alignRight
+    {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .cropImg
+    {
+    display: none;
+    }
+}
+
+@media (width > 900px){
+
+    /*
+canvas
+{
+    max-width: 23%;
+}*/
+main .logo
+{
+display: none;
+}
+.controls
+{
+display: none !important;
+}
+.alignRight
+{
+    display: flex;
+    align-items: center;
+}
+}
