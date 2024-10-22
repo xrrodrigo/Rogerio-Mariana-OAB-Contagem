@@ -44,27 +44,25 @@ cropButton.addEventListener('click', function () {
         const canvas = document.getElementById('canvas');
         const context = canvas.getContext('2d');
 
-        // Primeiro, configuramos o tamanho do canvas
-        var baseImage = new Image();
-        baseImage.src = 'canvaimage.png'; // Caminho da imagem base (canvaimage)
-        baseImage.onload = function() {
-            canvas.width = baseImage.naturalWidth;
-            canvas.height = baseImage.naturalHeight;
+        // Primeiro, desenha a imagem do input
+        var imgInput = new Image();
+        imgInput.src = croppedImage.src; // Imagem do input
+        imgInput.onload = function() {
+            canvas.width = imgInput.naturalWidth;
+            canvas.height = imgInput.naturalHeight;
+            context.drawImage(imgInput, 0, 0);
 
-            // Depois, desenhamos a imagem base
-            context.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
+            // Depois, desenha a canvaimage por cima
+            var img1 = new Image();
+            img1.src = 'canvaimage.png'; // Caminho da imagem canvaimage
+            img1.onload = function() {
+                context.drawImage(img1, 0, 0, canvas.width, canvas.height);
 
-            // Depois, desenhamos a imagem do input
-            var imgInput = new Image();
-            imgInput.src = croppedImage.src; // Imagem do input
-            imgInput.onload = function() {
-                context.drawImage(imgInput, 0, 0); // Ajustar a posição conforme necessário
-
-                // Finalmente, desenhamos a imagem de overlay
+                // Finalmente, desenha o overlay por cima de tudo
                 var imgOverlay = new Image();
-                imgOverlay.src = 'overlay.png'; // Caminho da terceira imagem (overlay)
+                imgOverlay.src = 'overlay.png'; // Caminho da imagem overlay
                 imgOverlay.onload = function() {
-                    context.drawImage(imgOverlay, 0, 0); // Ajustar a posição conforme necessário
+                    context.drawImage(imgOverlay, 0, 0);
                 };
             };
         };
