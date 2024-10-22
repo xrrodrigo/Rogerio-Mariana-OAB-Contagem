@@ -40,29 +40,29 @@ cropButton.addEventListener('click', function () {
         section.style.display = "flex";
         controls.style.display = "flex";
         container.style.display = "none";
-        
+
         const canvas = document.getElementById('canvas');
         const context = canvas.getContext('2d');
 
-       
-            
-         );
-
+        // Primeiro, desenha a imagem do input
         var imgInput = new Image();
         imgInput.src = croppedImage.src; // Imagem do input
         imgInput.onload = function() {
-            context.drawImage(imgInput, 0, 0, canvas.width, canvas.height);
+            canvas.width = imgInput.naturalWidth;
+            canvas.height = imgInput.naturalHeight;
+            context.drawImage(imgInput, 0, 0);
 
+            // Depois, desenha a canvaimage por cima
             var img1 = new Image();
-            img1.src = 'canvaimage.png'; // Caminho da imagem do Canva
+            img1.src = 'canvaimage.png'; // Caminho da imagem canvaimage
             img1.onload = function() {
                 context.drawImage(img1, 0, 0, canvas.width, canvas.height);
-            };
 
-            var img3 = new Image();
-            img3.src = 'overlay.png'; // Caminho da terceira imagem
-            img3.onload = function() {
-                context.drawImage(img3, 0, 0); // Ajustar a posição conforme necessário
+                // Finalmente, desenha o overlay por cima de tudo
+                var imgOverlay = new Image();
+                imgOverlay.src = 'overlay.png'; // Caminho da imagem overlay
+                imgOverlay.onload = function() {
+                    context.drawImage(imgOverlay, 0, 0);
                 };
             };
         };
