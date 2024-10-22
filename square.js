@@ -44,24 +44,22 @@ cropButton.addEventListener('click', function () {
         const canvas = document.getElementById('canvas');
         const context = canvas.getContext('2d');
 
-        var img1 = new Image();
-        img1.src = 'canvaimage.png'; // Caminho da primeira imagem (img1)
-        img1.onload = function() {
-            canvas.width = img1.naturalWidth;
-            canvas.height = img1.naturalHeight;
-            context.drawImage(img1, 0, 0, canvas.width, canvas.height);
+        // Primeiro, configuramos o tamanho do canvas
+        var baseImage = new Image();
+        baseImage.src = 'canvaimage.png'; // Caminho da imagem base (canvaimage)
+        baseImage.onload = function() {
+            canvas.width = baseImage.naturalWidth;
+            canvas.height = baseImage.naturalHeight;
 
+            // Depois, desenhamos a imagem base
+            context.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
+
+            // Depois, desenhamos a imagem do input
             var imgInput = new Image();
             imgInput.src = croppedImage.src; // Imagem do input
             imgInput.onload = function() {
                 context.drawImage(imgInput, 0, 0); // Ajustar a posição conforme necessário
 
-                var img3 = new Image();
-                img3.src = 'overlay.png'; // Caminho da terceira imagem (img3)
-                img3.onload = function() {
-                    context.drawImage(img3, 0, 0); // Ajustar a posição conforme necessário
-                };
-            };
-        };
-    });
-});
+                // Finalmente, desenhamos a imagem de overlay
+                var imgOverlay = new Image();
+                imgOverlay.src =
