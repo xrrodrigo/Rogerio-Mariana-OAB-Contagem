@@ -12,6 +12,4 @@ async function download(event) {
     anchor.download = 'Rogerio&Mariana' + i + '.jpg';
     anchor.click();
     window.URL.revokeObjectURL(anchor.href);
-
-    location.reload();
 }
