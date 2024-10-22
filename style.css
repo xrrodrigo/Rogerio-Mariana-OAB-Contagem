@@ -1,0 +1,32 @@
+*
+{
+gap: 1rem;
+}
+body
+{
+    font-family: 'iCiel Gotham', sans-serif;                                  
+    font-weight: 400;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo
+{
+width: 14rem;
+}
+a
+{
+text-decoration: none;
+color: #000;
+border: 1px #000 dashed;
+border-radius: 0.2rem;
+width: 10rem;
+height: 13rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.btnImage
+{
+width: 10rem;
+}
