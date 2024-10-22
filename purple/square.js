@@ -45,7 +45,7 @@ cropButton.addEventListener('click', function () {
         const context = canvas.getContext('2d');
 
         var img1 = new Image();
-        img1.src = 'canvaimage.jpg'; // Caminho da primeira imagem (img1)
+        img1.src = 'canvaimage.png'; // Caminho da primeira imagem (img1)
         img1.onload = function() {
             canvas.width = img1.naturalWidth;
             canvas.height = img1.naturalHeight;
